@@ -6,7 +6,7 @@
         <p>
           Try your best at guessing where Twitter trends have been trending in.
         </p>
-        <router-link to="/play">
+        <router-link :to="{name: 'trendle.play'}">
           <play-button />
         </router-link>
       </div>
@@ -17,9 +17,9 @@
 
 <script>
 import { NSpace } from 'naive-ui';
-import BasicFooter from "../components/footer/BasicFooter.vue";
-import CursorLogo from "../components/type/CursorLogo.vue";
-import PlayButton from "../components/button/PlayButton.vue";
+import BasicFooter from "../../components/trendle/footer/BasicFooter.vue";
+import CursorLogo from "../../components/trendle/type/CursorLogo.vue";
+import PlayButton from "../../components/trendle/button/PlayButton.vue";
 
 export default {
   name: "HomeView",

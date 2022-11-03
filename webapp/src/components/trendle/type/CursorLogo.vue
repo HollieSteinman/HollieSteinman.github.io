@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from "@vue/runtime-core";
+import { defineComponent } from "vue";
 import BasicLogo from "./BasicLogo.vue"
 
 

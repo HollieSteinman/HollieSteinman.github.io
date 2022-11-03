@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { defineComponent } from "@vue/runtime-core";
+import { defineComponent } from "vue";
 import { NButton, NGradientText } from "naive-ui";
 
 export default defineComponent({

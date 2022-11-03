@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import GameRound from "../components/game/GameRound.vue";
+import GameRound from "../../components/trendle/game/GameRound.vue";
 import { mapGetters, mapActions } from 'vuex';
 
 export default {

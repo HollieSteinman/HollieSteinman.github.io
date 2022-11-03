@@ -1,15 +1,15 @@
 <template>
   <n-space justify="space-between" size="large" class="space-container">
-    <router-link to="/">
+    <router-link :to="{name: 'trendle'}">
       <n-button text :focusable='false'>
         <basic-logo tag="b" font_size="15px"/>
       </n-button>
     </router-link>
     <n-space justify="end" size="large">
-      <router-link to="/play">
+      <router-link :to="{name: 'trendle.play'}">
         <n-button text>Play</n-button>
       </router-link>
-      <router-link to="/leaderboard">
+      <router-link :to="{name: 'trendle.leaderboard'}">
         <n-button text>Leaderboards</n-button>
       </router-link>
     </n-space>
