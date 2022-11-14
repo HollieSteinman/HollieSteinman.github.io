@@ -1,12 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Trendle from '@/views/Trendle.vue'
-
 const routes = [
+    {
+        path: '/',
+        name: 'home',
+        component: ()=>import('@/views/HomeView.vue')
+    },
     {
         path: '/trendle',
         name: "trendle",
-        component: Trendle,
+        component: ()=>import('@/views/TrendleView.vue'),
         children: [
             {
                 path: '',

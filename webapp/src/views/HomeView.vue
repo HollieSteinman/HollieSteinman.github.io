@@ -1,0 +1,298 @@
+<template>
+  <n-space class="background" />
+  <n-space class="app-layout">
+    <left-border />
+    <n-space class="content-layout">
+      <n-space class="section">
+        <n-text tag="h3" class="subtitle">
+          Hi, I'm
+        </n-text>
+        <n-text tag="h1" class="name">
+          Hollie
+        </n-text>
+        <n-text tag="h4" class="subtitle-2">
+          I'm a graduate software engineer, ready to build things. Specifically, I'm interested in full-stack
+          development,
+          cloud-based technologies as well as making technology better for the world.
+          (I also like film photography if you can't tell)
+        </n-text>
+      </n-space>
+      <n-space class="section" style="margin-bottom: 200px">
+        <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
+          What I've Worked On
+        </n-text>
+        <project-card :img='require("@/assets/trendle.png")' :grainImg='require("@/assets/grain-overlay-1.jpg")'
+          title="Trendle" description="A twitter game web-app, utilising cloud services."
+          :tags="['Vue.js', 'AWS', 'Firebase']" style="margin-bottom: 40px" />
+        <project-card :img='require("@/assets/ml.gif")' :grainImg="require('@/assets/grain-overlay-4.jpg')"
+          title="ML Traffic Management" description="Machine learning intersection control for optimising traffic."
+          :tags="['Python', 'OpenAI Gym']" mixBlendMode="exclusion" style="margin-bottom: 40px" />
+        <project-card :img='require("@/assets/butter.png")' :grainImg="require('@/assets/grain-overlay-2.jpg')"
+          title="Butter" description="An on-demand social planning app."
+          :tags="['React Native', 'Typescript', 'Firebase']" />
+      </n-space>
+      <n-space class="section" style="margin-bottom: 200px">
+        <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
+          Skills
+        </n-text>
+        <skills-layout category="Languages"
+          :skills="['Python', 'C/C++', 'C#', 'Java', 'js/ts', 'HTML', 'CSS', 'SQL', 'NoSQL']" />
+        <skills-layout category="Frameworks / Libraries"
+          :skills="['React', 'React Native', 'Vue.js', '.NET', '.NET Framework', 'Razor', 'Maven', 'Flask', 'OpenAI Gym']" />
+        <skills-layout category="Cloud" :skills="['Azure DevOps', 'AWS', 'Firebase', 'Google Cloud Platform']" />
+        <skills-layout category="Misc" :skills="['MongoDB', 'MySQL', 'MSSQL', 'Quick Learning', 'Open Mind']" />
+      </n-space>
+      <n-space class="section" style="margin-bottom: 200px">
+        <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
+          Experience
+        </n-text>
+        <n-text tag="h4" class="subtitle-2" style="margin-bottom: 5px">
+          Brand Services Australia
+        </n-text>
+        <n-tag :bordered="false" :color="{ color: '#f7c66e', textColor: 'white' }" size="small"
+          style="margin-right: 20px">
+          Internship
+        </n-tag>
+        <n-tag :bordered="false" :color="{ color: '#f7c66e', textColor: 'white' }" size="small">
+          Mar 2021 - Mar 2022
+        </n-tag>
+        <n-text tag="p" style="padding-bottom: 30px">
+          I worked for Brand Services Australia between March of 2021 to March of 2022 for my university internship.
+          Over the course of my time at Brand Services Australia, I worked on leaning & maintaining the business' legacy
+          .NET site,
+          whilst also developing & integrating new features.
+          <br /><br />
+          Some of the notable work which I completed was creating an integration with Shopify's API from the .NET site
+          as well as designing / developing an updated site.
+        </n-text>
+        <n-text tag="p" class="quote" italic>
+          "Hollie has been working with Brand Services as an intern performing the role of Junior Developer.
+          <br/><br/>
+          Hollie has worked on a number Technology functions such as:
+          Production Support.
+          Testing.
+          Software Development.
+          Design.
+          Change Control.
+          Deployment.
+          Documentation.
+          Training.
+          Handover.
+          Leadership.
+          <br/><br/>
+          Also as a part of the Team Hollie has developed solutions for our:
+          Warehouse system.
+          eCommercie solution.
+          Created new backend system.
+          Onboarding new Customers.
+          <br/><br/>
+          Hollie has also become the go to person when there is a need to reverse engineer a system problem in a short
+          space of time. Hollie is an amazing asset to our team. It is an absolute pleasure to have Hollie as member of our Technology Team.
+          Exceptional Work Hollie."
+        </n-text>
+        <n-text tag="p" style="text-align: right">
+            - Robert Braxton (Technology Leader)
+        </n-text>
+      </n-space>
+      <n-space class="section">
+        <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
+          Contact Me
+        </n-text>
+        <input type="text" placeholder="Name" style='width: 25%'/> <br/>
+        <input type="text" placeholder="Email" style='width: 35%'/> <br/>
+        <input type="text" placeholder="Subject" style='box-sizing: border-box; width: 100%'/> <br/>
+        <textarea placeholder="Message" style='box-sizing: border-box; width: 100%; min-height: 75px; resize: none' />
+        <div style="display: flex; justify-content: flex-end">
+          <n-button text>
+          Send
+        </n-button>
+        </div>
+      </n-space>
+    </n-space>
+    <right-border />
+  </n-space>
+</template>
+
+<script>
+import LeftBorder from '@/components/border/LeftBorder.vue';
+import RightBorder from '@/components/border/RightBorder.vue';
+import ProjectCard from '@/components/card/ProjectCard.vue';
+import SkillsLayout from '@/components/layout/SkillsLayout.vue';
+import { NText, NTag, NButton } from 'naive-ui';
+
+export default {
+  name: 'HomeView',
+  components: {
+    LeftBorder,
+    RightBorder,
+    ProjectCard,
+    SkillsLayout,
+    NText,
+    NTag,
+    NButton
+  }
+}
+</script>
+
+<style scoped>
+.app-layout {
+  position: static;
+  min-height: 100vh;
+  min-width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.background {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(@/assets/grain-texture.jpg);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.2;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+  mix-blend-mode: color-dodge;
+  z-index: -99;
+}
+
+@keyframes grain {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -10%)
+  }
+
+  20% {
+    transform: translate(-15%, 5%)
+  }
+
+  30% {
+    transform: translate(7%, -25%)
+  }
+
+  40% {
+    transform: translate(-5%, 25%)
+  }
+
+  50% {
+    transform: translate(-15%, 10%)
+  }
+
+  60% {
+    transform: translate(15%, 0%)
+  }
+
+  70% {
+    transform: translate(0%, 15%)
+  }
+
+  80% {
+    transform: translate(3%, 35%)
+  }
+
+  90% {
+    transform: translate(-10%, 10%)
+  }
+}
+
+.content-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 150px;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.section {
+  padding-top: 50px;
+  min-height: calc(100vh - 200px);
+}
+
+.subtitle {
+  font-family: 'Space Mono', monospace;
+  margin: 0px;
+  color: #f7c66e;
+  font-size: 20px;
+}
+
+.n-tag {
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-family: 'Space Mono', monospace;
+  margin: 0px;
+  color: white;
+  font-size: 50px;
+}
+
+.subtitle-2 {
+  font-family: 'Space Mono', monospace;
+  color: white;
+  margin: 20px 0px 0px 0px;
+}
+
+p {
+  font-family: 'Space Mono', monospace;
+  color: white;
+}
+
+.quote {
+  opacity: 75%;
+}
+
+input, textarea {
+  font-family: 'Space Mono', monospace;
+  color: white;
+  background-color: rgba(255, 255, 255, .05);
+  border-width: 0px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid rgba(255, 255, 255, .75);
+}
+
+.n-button {
+  font-family: 'Space Mono', monospace;
+  color: #f7c66e;
+  padding-right: 0;
+}
+
+.n-button:hover {
+  color: #f7c76e79;
+}
+
+.n-button:focus {
+  color: #f7c66e;
+}
+
+/* 
+  film font col: #f7c66e 
+  film bg: #010103
+
+*/
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+html {
+  background: #1e1e1e !important;
+}
+</style>
