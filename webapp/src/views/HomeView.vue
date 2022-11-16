@@ -1,5 +1,6 @@
 <template>
   <n-space class="background" />
+  <main-header />
   <n-space class="app-layout">
     <left-border />
     <n-space class="content-layout">
@@ -17,7 +18,7 @@
           (I also like film photography if you can't tell)
         </n-text>
       </n-space>
-      <n-space class="section" style="margin-bottom: 200px">
+      <n-space class="section" style="margin-bottom: 200px" ref="projects">
         <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
           What I've Worked On
         </n-text>
@@ -31,7 +32,7 @@
           title="Butter" description="An on-demand social planning app."
           :tags="['React Native', 'Typescript', 'Firebase']" />
       </n-space>
-      <n-space class="section" style="margin-bottom: 200px">
+      <n-space class="section" style="margin-bottom: 200px" ref="skills">
         <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
           Skills
         </n-text>
@@ -42,7 +43,7 @@
         <skills-layout category="Cloud" :skills="['Azure DevOps', 'AWS', 'Firebase', 'Google Cloud Platform']" />
         <skills-layout category="Misc" :skills="['MongoDB', 'MySQL', 'MSSQL', 'Quick Learning', 'Open Mind']" />
       </n-space>
-      <n-space class="section" style="margin-bottom: 200px">
+      <n-space class="section" style="margin-bottom: 200px" ref="experience">
         <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
           Experience
         </n-text>
@@ -94,7 +95,7 @@
             - Robert Braxton (Technology Leader)
         </n-text>
       </n-space>
-      <n-space class="section">
+      <n-space class="section" ref="contact">
         <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
           Contact Me
         </n-text>
@@ -116,6 +117,7 @@
 <script>
 import LeftBorder from '@/components/border/LeftBorder.vue';
 import RightBorder from '@/components/border/RightBorder.vue';
+import MainHeader from '@/components/header/MainHeader.vue';
 import ProjectCard from '@/components/card/ProjectCard.vue';
 import SkillsLayout from '@/components/layout/SkillsLayout.vue';
 import { NText, NTag, NButton } from 'naive-ui';
@@ -125,6 +127,7 @@ export default {
   components: {
     LeftBorder,
     RightBorder,
+    MainHeader,
     ProjectCard,
     SkillsLayout,
     NText,
@@ -149,17 +152,18 @@ export default {
 }
 
 .background {
-  animation: grain 8s steps(10) infinite;
+  animation: grain 5s steps(10) infinite;
   background-image: url(@/assets/grain-texture.jpg);
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.2;
+  opacity: 0.25;
   position: fixed;
   top: -110%;
   width: 300%;
   mix-blend-mode: color-dodge;
   z-index: -99;
+  overflow: hidden;
 }
 
 @keyframes grain {
@@ -256,6 +260,7 @@ p {
 
 input, textarea {
   font-family: 'Space Mono', monospace;
+  font-size: 14px;
   color: white;
   background-color: rgba(255, 255, 255, .05);
   border-width: 0px;
