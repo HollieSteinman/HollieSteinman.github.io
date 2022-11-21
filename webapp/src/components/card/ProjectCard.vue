@@ -15,7 +15,7 @@
                 {{ title }}
               </n-text>
             </n-space>
-            <n-text tag="p">
+            <n-text tag="p" v-if="!mobile">
               {{ description }}
             </n-text>
           </div>
@@ -40,7 +40,8 @@ export default {
   data() {
     return {
       hover: false,
-      mix: this.mixBlendMode ? this.mixBlendMode : 'color-dodge'
+      mix: this.mixBlendMode ? this.mixBlendMode : 'color-dodge',
+      mobile: false
     }
   },
   props: {
@@ -79,6 +80,24 @@ export default {
         '--mode': this.mix
       }
     }
+  },
+  methods: {
+    checkMobile() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 500) {
+        this.mobile = true;
+      }
+      else {
+        this.mobile = false;
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.checkMobile)
+    this.checkMobile()
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile)
   }
 }
 </script>
@@ -88,6 +107,7 @@ p {
   font-family: 'Space Mono', monospace;
   color: white;
   text-align: right;
+  margin: 0;
 }
 
 h3 {
@@ -103,6 +123,7 @@ h3 {
   justify-content: end;
   margin-right: 10px;
   align-items: end;
+  margin-bottom: 10px;
 }
 
 .n-tag {
@@ -135,6 +156,7 @@ h3 {
 .overlay>h3,
 p {
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .v-enter-active,

@@ -200,7 +200,7 @@ html {
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.25;
+  opacity: 0.5;
   position: fixed;
   top: -110%;
   width: 300%;

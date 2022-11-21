@@ -20,7 +20,7 @@
           Contact Me
         </n-button>
       </n-space>
-      <n-button text @click="toggleDropdown" v-if="mobile" class="icon">
+      <n-button text @click="toggleDropdown" v-if="mobile">
         <template #icon>
           <n-icon size="25" :class="{ 'icon-active': mobileDropdown }">
             <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
