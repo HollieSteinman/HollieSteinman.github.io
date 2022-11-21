@@ -21,7 +21,8 @@ export default defineComponent({
   data() {
     return {
       height: 0,
-      noText: 1
+      noText: 1,
+      resizeObserver: null
     }
   },
   methods: {
@@ -34,9 +35,12 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.getHeight());
-    })
+    this.resizeObserver = new ResizeObserver(this.getHeight);
+    this.resizeObserver.observe(document.body)
+    this.getHeight();
+  },
+  beforeUnmount() {
+    this.resizeObserver.unobserve(document.body)
   }
 })
 </script>
@@ -48,6 +52,7 @@ n-space .vertical {
 }
 
 n-space .horizontal {
+  flex: 0 0 25px;
   display: flex;
   flex-direction: row;
 }

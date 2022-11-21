@@ -1,34 +1,32 @@
 <template>
-  <n-card class="project" @mouseover="hover = true" @mouseleave="hover = false">
-    <template #cover>
-      <img v-bind:src=grainImg class="grain-overlay" :style="cssProps">
-      <img v-bind:src=img />
-      <transition>
-        <div v-if="hover" class="overlay">
-          <n-space class="title">
-            <n-tag
-              v-for="(tag, key) in tags"
-              :key="key"
-              :bordered="false"
-              :color="{color: '#f7c66e', textColor: 'white'}"
-              size="small"
-            >
-              {{tag}}
-            </n-tag>
-            <n-text tag="h3">
-              {{title}}
+  <router-link :to="link">
+    <n-card class="project" @mouseover="hover = true" @mouseleave="hover = false">
+      <template #cover>
+        <img v-bind:src=grainImg class="grain-overlay" :style="cssProps">
+        <img v-bind:src=img />
+        <transition>
+          <div v-if="hover" class="overlay">
+            <n-space class="title">
+              <n-tag v-for="(tag, key) in tags" :key="key" :bordered="false"
+                :color="{ color: '#f7c66e', textColor: 'white' }" size="small">
+                {{ tag }}
+              </n-tag>
+              <n-text tag="h3">
+                {{ title }}
+              </n-text>
+            </n-space>
+            <n-text tag="p">
+              {{ description }}
             </n-text>
-          </n-space>
-          <n-text tag="p">
-            {{description}}
-          </n-text>
-        </div>
-      </transition>
-    </template>
-  </n-card>
+          </div>
+        </transition>
+      </template>
+    </n-card>
+  </router-link>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 import { NCard, NText, NTag } from 'naive-ui';
 
 export default {
@@ -36,7 +34,8 @@ export default {
   components: {
     NCard,
     NText,
-    NTag
+    NTag,
+    RouterLink
   },
   data() {
     return {
@@ -68,11 +67,14 @@ export default {
     },
     mixBlendMode: {
       type: String,
+    },
+    link: {
+      type: String,
+      require: true
     }
   },
   computed: {
     cssProps() {
-      console.log(this.mix)
       return {
         '--mode': this.mix
       }
@@ -130,7 +132,8 @@ h3 {
   max-width: 100%;
 }
 
-.overlay > h3, p {
+.overlay>h3,
+p {
   margin-right: 10px;
 }
 

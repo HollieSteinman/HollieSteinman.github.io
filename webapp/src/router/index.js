@@ -7,6 +7,24 @@ const routes = [
         component: ()=>import('@/views/HomeView.vue')
     },
     {
+        path: '/projects/trendle',
+        name: 'ProjectsTrendle',
+        component: ()=>import('@/views/ProjectView.vue'),
+        props: {project: 'trendle'}
+    },
+    {
+        path: '/projects/ml',
+        name: 'ProjectsML',
+        component: ()=>import('@/views/ProjectView.vue'),
+        props: {project: 'ml'}
+    },
+    {
+        path: '/projects/butter',
+        name: 'ProjectButter',
+        component: ()=>import('@/views/ProjectView.vue'),
+        props: {project: 'butter'}
+    },
+    {
         path: '/trendle',
         name: "trendle",
         component: ()=>import('@/views/TrendleView.vue'),
@@ -44,7 +62,16 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
-    routes
+    routes,
+    scrollBehavior(to) {
+        if (to.hash) {
+          return {
+            el: to.hash,
+            behavior: 'smooth',
+          }
+        }
+        else return { top: 0 }
+      }
 })
 
 export default router;

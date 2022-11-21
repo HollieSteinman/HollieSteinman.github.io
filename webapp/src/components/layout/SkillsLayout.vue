@@ -48,6 +48,7 @@ h3 {
   margin: 0px;
   color: white;
   font-size: 15px;
+  letter-spacing: 0.25px;
 }
 
 .arrow {
