@@ -13,7 +13,7 @@
             Hollie
           </n-text>
           <n-text tag="p">
-            I'm a graduate software engineer, ready to build things. Specifically, I'm interested in full-stack
+            I'm a final year software engineer, ready to build things. Specifically, I'm interested in full-stack
             development,
             cloud-based technologies as well as making technology better for the world.
             (I also like film photography if you can't tell)
@@ -49,7 +49,7 @@
           <skills-layout category="Frameworks / Libraries"
             :skills="['React', 'React Native', 'Vue.js', '.NET', '.NET Framework', 'Razor', 'Maven', 'Flask', 'OpenAI Gym']" />
           <skills-layout category="Cloud" :skills="['Azure DevOps', 'AWS', 'Firebase', 'Google Cloud Platform']" />
-          <skills-layout category="Misc" :skills="['MongoDB', 'MySQL', 'MSSQL', 'Quick Learning', 'Open Mind']" />
+          <skills-layout category="Misc" :skills="['MongoDB', 'MySQL', 'MSSQL', 'GraphQL', 'Quick Learning', 'Open Mind']" />
         </n-space>
         <n-space class="section" style="margin-bottom: 200px" ref="experience" id="experience">
           <n-text tag="h3" class="subtitle" style="margin-bottom: 20px">
