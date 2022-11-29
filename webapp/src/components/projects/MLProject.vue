@@ -205,7 +205,7 @@
     Final average reward: <n-text code>33.189</n-text><br/><br/>
 
     The optimal policy performed slightly better, than the static policy, with a slight increase in average speed
-    and a noticable reduction in steps:<br/>
+    and a noticeable reduction in steps:<br/>
     Average steps: <n-text code>378.6</n-text><br/>
     Final average reward: <n-text code>33.631</n-text>
   </n-text>

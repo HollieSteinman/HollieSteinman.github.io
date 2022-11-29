@@ -73,7 +73,7 @@
             whilst also developing & integrating new features.
             <br /><br />
             One project I worked on was an integration with Shopify's API, to connect client stores with the .NET site.
-            I also helped work on an integration with Australia Post's API, to assist the buisness' warehouse create consignments.
+            I also helped work on an integration with Australia Post's API, to assist the business' warehouse create consignments.
             Towards the end of my internship, we began to design & develop an updated site for the company to replace the legacy system.
             In this process, I also set up DevOps pipelines for the sites.
           </n-text>
@@ -313,6 +313,7 @@ p {
 /* 
   film font col: #f7c66e 
   film bg: #010103
+  #1e1e1e
 
 */
 </style>
